@@ -8,10 +8,15 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class MyInteger_Test {
+public class Triangle_Test {
 
+	static Triangle noArgTri;
+	static Triangle Tri;
+	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		noArgTri = new Triangle();
+		Tri = new Triangle(7,10,5);
 	}
 
 	@AfterClass
@@ -28,7 +33,10 @@ public class MyInteger_Test {
 
 	@Test
 	public void test() {
-		assertTrue(1==1);
-	}
+		assertTrue(noArgTri.getPerimeter() == 3);
+		assertTrue(Tri.getPerimeter() == 22);
+		assertTrue(noArgTri.getArea() == 0.43);
+		assertTrue(Tri.getArea() == 16.25);
+		}
 
 }
